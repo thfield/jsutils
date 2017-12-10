@@ -3,7 +3,7 @@
 /** @function nestedFind
  * @param data - a d3.nest().entries() object
  * @param keys - the keys to find values for, in nested order
- * @returns *false* if not found, otherwise *value*
+ * @returns *falsey* if not found, otherwise *value*
  */
 function nestedFind (data, ...keys) {
   let res = data.find(function (el) { return el.key === keys[0] })
