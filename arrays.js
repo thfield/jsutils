@@ -53,4 +53,21 @@ function flatten (arr) {
   return arr.reduce((a, v) => a.concat(v), [])
 }
 
-module.exports = { sortNumberAsc, sortNumberDesc, median, insertArrayAt, flatten }
+/** @function intersection
+ * calculate the intersection of two or more arrays
+ * @param {array} a
+ * @param {array} b - one or more arrays
+ * @returns {array}
+ */
+function intersection (a, ...b) {
+  let arrays = [a]
+  arrays.push(...b)
+  var result = arrays.shift().filter(function (v) {
+    return arrays.every(function (d) {
+      return d.indexOf(v) !== -1
+    })
+  })
+  return result
+}
+
+module.exports = { sortNumberAsc, sortNumberDesc, median, insertArrayAt, flatten, intersection }

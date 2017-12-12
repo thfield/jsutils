@@ -91,3 +91,27 @@ describe ('flatten', function () {
     expect(arr).toEqual([1, 2, 3, ['a', 'b']])
   })
 })
+
+describe ('intersection', function () {
+  it ('works with arrays of numbers', function () {
+    let a = [1, 2, 3]
+    let b = [3, 4, 5]
+    let res = arrays.intersection(a, b)
+    expect(res).toEqual([3])
+  })
+
+  it ('works with arrays of strings', function () {
+    let a = ['a', 'b', 'c']
+    let b = ['c', 'd', 'e']
+    let res = arrays.intersection(a, b)
+    expect(res).toEqual(['c'])
+  })
+
+  it ('works with three arrays', function () {
+    let a = [1, 2, 3]
+    let b = [3, 4, 5]
+    let c = [3, 5, 7]
+    let res = arrays.intersection(a, b, c)
+    expect(res).toEqual([3])
+  })
+})
