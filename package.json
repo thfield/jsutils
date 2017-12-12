@@ -1,0 +1,23 @@
+{
+  "name": "jsutils",
+  "version": "1.0.0",
+  "description": "Useful little functions",
+  "main": "array-to-csv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thfield/jsutils.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thfield/jsutils/issues"
+  },
+  "homepage": "https://github.com/thfield/jsutils#readme",
+  "dependencies": {
+    "jasmine": "^2.8.0"
+  }
+}

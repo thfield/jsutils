@@ -38,8 +38,19 @@ function median (arr) {
  * @returns {array}
  */
 function insertArrayAt (array, index, arrayToInsert) {
-  // http://stackoverflow.com/questions/1348178/a-better-way-to-splice-an-array-into-an-array-in-javascript
-  Array.prototype.splice.apply(array, [index, 0].concat(arrayToInsert))
+  let temp = array.slice(0)
+  temp.splice(index, 0, arrayToInsert)
+  return flatten(temp)
 }
 
-module.exports = { sortNumberAsc, sortNumberDesc, median, insertArrayAt }
+/** @function flatten
+ * flatten([1,[2],3,4]) -> [1,2,3,4]
+ * @param {array} arr
+ * @returns {array}
+ * https://github.com/Chalarangelo/30-seconds-of-code#flatten-array
+ */
+function flatten (arr) {
+  return arr.reduce((a, v) => a.concat(v), [])
+}
+
+module.exports = { sortNumberAsc, sortNumberDesc, median, insertArrayAt, flatten }
