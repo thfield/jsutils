@@ -12,6 +12,12 @@ describe ('arrayToCsvString', function () {
     expect(res).toEqual('1,2,3\n4,5,6\n7,8,9')
   })
 
+  it('returns a header row when asked', function () {
+    let headerRow = ['a', 'b', 'c']
+    let res = arrayToCsvString(testArr, headerRow, true)
+    expect(res).toEqual('a,b,c\n1,2,3\n4,5,6\n7,8,9')
+  })
+
   it('works with a reverse header row', function () {
     let headerRowReverse = ['c', 'b', 'a']
     let res = arrayToCsvString(testArr, headerRowReverse)
