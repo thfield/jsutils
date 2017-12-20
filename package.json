@@ -19,5 +19,8 @@
   "homepage": "https://github.com/thfield/jsutils#readme",
   "dependencies": {
     "jasmine": "^2.8.0"
+  },
+  "devDependencies": {
+    "d3": "^4.12.0"
   }
 }

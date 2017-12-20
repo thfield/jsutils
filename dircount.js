@@ -1,7 +1,8 @@
 'use strict'
 const fs = require('fs')
 
-let path = process.argv[2] || './'
+// TODO: add option to sortBy alpha or numFiles
+let path = process.argv[2] || process.cwd()
 
 try {
   let c = foldercountSync(path)
