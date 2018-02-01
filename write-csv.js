@@ -14,6 +14,7 @@ module.exports = function (filepath, data, delimiter = ',') {
   data.forEach(function (row) {
     let rowText = ''
     headers.forEach(function (d, i) {
+      let foo = row[d].includes(',') ? `"${row[d]}"` : row[d]
       rowText += row[d]
       if (i < headers.length - 1) { rowText += delimiter }
     })
