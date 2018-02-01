@@ -15,7 +15,9 @@ module.exports = function (filepath, data, delimiter = ',') {
     let rowText = ''
     headers.forEach(function (d, i) {
       if (typeof row[d] === 'string') {
-        rowText += row[d].includes(',') ? `"${row[d]}"` : row[d]
+        let smplfd = row[d].includes(',') ? `"${row[d]}"` : row[d]
+        smplfd = smplfd.replace(/\n/g, '').replace(/\r/g, '')
+        rowText += smplfd
       } else {
         rowText += row[d]
       }
