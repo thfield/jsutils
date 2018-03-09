@@ -2,7 +2,7 @@
 
 /** @function prettyPrint
  * pretty print an array and return an array of the strings
- * @param {array[]} arr - hopefully: ['string', integer]
+ * @param {array[]} arr - something like: [['string', int], ['string', int]]
  * @param {boolean} print - log out?
  * @returns {string[]}
  */

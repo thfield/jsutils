@@ -6,7 +6,8 @@ let path = process.argv[2] || process.cwd()
 
 try {
   let c = foldercountSync(path)
-  prettyPrint(c, true)
+  console.log(c)
+  // prettyPrint(c, true)
 } catch (error) {
   console.error(error.message)
 }
