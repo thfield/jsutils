@@ -1,12 +1,12 @@
 'use strict'
 const fs = require('fs')
-
+const prettyPrint = require('./prettyPrint')
 // TODO: add option to sortBy alpha or numFiles
 let path = process.argv[2] || process.cwd()
 
 try {
   let c = foldercountSync(path)
-  logout(c, true)
+  prettyPrint(c, true)
 } catch (error) {
   console.error(error.message)
 }
@@ -44,28 +44,4 @@ function foldercountSync (path) {
   // add the root-files
   rdirs.push(['./', rfiles.length])
   return rdirs
-}
-
-/** @function logout
- * pretty print an array and return an array of the strings
- * @param {array[]} arr - hopefully: ['string', integer]
- * @param {boolean} print - log out?
- * @returns {string[]}
- */
-function logout (arr, print = false) {
-  if (!Array.isArray(arr)) {
-    throw new Error('Argument 0 must be an array')
-  }
-  // find the longest character count
-  let max = arr.reduce(function (prev, cur) {
-    let c = cur.join('').length
-    return prev > c ? prev : c
-  }, 0)
-  return arr.map(function (d) {
-    let len = (d[0] + d[1]).length
-    let pad = max - len
-    let res = `${d[0]} ...${'.'.repeat(pad)} ${d[1]}`
-    if (print) console.log(res)
-    return res
-  })
 }
