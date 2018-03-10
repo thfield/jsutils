@@ -3,7 +3,7 @@
 /** @function prettyPrint
  * pretty print an array and return an array of the strings
  * @param {array[]} arr - something like: [['string', int], ['string', int]]
- * @param {boolean} print - log out?
+ * @param {boolean} print - log out to console?
  * @returns {string[]}
  */
 function prettyPrint (arr, print = false) {
