@@ -15,8 +15,9 @@ function prettyPrint (arr, print = false) {
     let c = cur.join('').length
     return prev > c ? prev : c
   }, 0)
+
   return arr.map(function (d) {
-    let len = (d[0] + d[1]).length
+    let len = (d[0].toString().concat(d[1].toString())).length
     let pad = max - len
     let res = `${d[0]} ...${'.'.repeat(pad)} ${d[1]}`
     if (print) console.log(res)

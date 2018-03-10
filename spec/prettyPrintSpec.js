@@ -8,6 +8,9 @@ let testArr3 = ['cc', 33]
 let testArr4 = ['ddd', 444]
 let testArr5 = ['e', 55555]
 let testArr6 = ['ff', 6]
+let testArr7 = [7, 'gg']
+let testArr8 = ['h', '8h']
+let testArr9 = [9, 9]
 
 describe ('prettyPrint ', function () {
 
@@ -87,6 +90,60 @@ describe ('prettyPrint ', function () {
     ]
     let res = prettyPrint(testArr)
     it('works for six strings with different lengths', function () {
+      expect(res).toEqual(expected)
+    })
+  })
+
+  describe ('7', function () {
+    testArr.push(testArr7)
+    let expected = [
+      'a ....... 1',
+      'b ....... 2',
+      'cc ..... 33',
+      'ddd ... 444',
+      'e ... 55555',
+      'ff ...... 6',
+      '7 ...... gg'
+    ]
+    let res = prettyPrint(testArr)
+    it('works with int/string pairs', function () {
+      expect(res).toEqual(expected)
+    })
+  })
+
+  describe ('8', function () {
+    testArr.push(testArr8)
+    let expected = [
+      'a ....... 1',
+      'b ....... 2',
+      'cc ..... 33',
+      'ddd ... 444',
+      'e ... 55555',
+      'ff ...... 6',
+      '7 ...... gg',
+      'h ...... 8h'
+    ]
+    let res = prettyPrint(testArr)
+    it('works with string/string pairs', function () {
+      expect(res).toEqual(expected)
+    })
+  })
+
+  describe ('9', function () {
+    testArr.push(testArr9)
+    let expected = [
+      'a ....... 1',
+      'b ....... 2',
+      'cc ..... 33',
+      'ddd ... 444',
+      'e ... 55555',
+      'ff ...... 6',
+      '7 ...... gg',
+      'h ...... 8h',
+      '9 ....... 9'
+    ]
+    let res = prettyPrint(testArr)
+    it('works with int/int pairs', function () {
       expect(res).toEqual(expected)
     })
   })
