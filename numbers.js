@@ -13,7 +13,7 @@ function numberWithCommas (x) {
 }
 
 /** @function round
- * round a number to the specified place (default 10)
+ * round a number to the specified *th place (default 10)
  * @param {number} num
  * @param {integer} [place] - place to round
  * @returns {number}
@@ -22,4 +22,16 @@ function round (num, place = 10) {
   return Math.round(place * num) / place
 }
 
-module.exports = { numberWithCommas, round }
+/** @function roundWhole
+ * round a number to the specified *th place (default 10)
+ * @param {number} num
+ * @param {integer} [place] - place to round
+ * @returns {number}
+ */
+function roundWhole (num, place = 10) {
+  num = num / place
+  num = Math.round(num)
+  return num * place
+}
+
+module.exports = { numberWithCommas, round, roundWhole }

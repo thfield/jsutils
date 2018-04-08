@@ -53,3 +53,35 @@ describe('round', function () {
     expect(res).toBe(0.123)
   })
 })
+
+describe('roundWhole', function () {
+  it ('rounds up to tens without a param', function () {
+    let res = numbers.roundWhole(9)
+    expect(res).toBe(10)
+  })
+
+  it ('rounds up to tens without a param (2)', function () {
+    let res = numbers.roundWhole(119)
+    expect(res).toBe(120)
+  })
+
+  it ('rounds down to tens without a param', function () {
+    let res = numbers.roundWhole(11)
+    expect(res).toBe(10)
+  })
+
+  it ('rounds up to hundreds', function () {
+    let res = numbers.roundWhole(290, 100)
+    expect(res).toBe(300)
+  })
+
+  it ('rounds down to hundreds', function () {
+    let res = numbers.roundWhole(440, 100)
+    expect(res).toBe(400)
+  })
+
+  it ('rounds to thousands', function () {
+    let res = numbers.roundWhole(12345, 1000)
+    expect(res).toBe(12000)
+  })
+})
