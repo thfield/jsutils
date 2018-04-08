@@ -12,8 +12,8 @@ function arrayToCsvString (arr, headers, showHeaders) {
   // use keys of first object if no headers object
   headers = headers || Object.keys(arr[0])
 
-  let res = arr.map(function (el) {
-    return makeRow(el, headers)
+  let res = arr.map(function (row) {
+    return makeRow(row, headers)
   })
 
   if (showHeaders) {
@@ -22,9 +22,13 @@ function arrayToCsvString (arr, headers, showHeaders) {
 
   return res.join('\n')
 
-  function makeRow (obj, props) {
-    let res = props.map(function (p) {
-      return obj[p]
+  function makeRow (row, headers) {
+    let res = headers.map(function (p) {
+      row[p] = row[p] || ''
+      if (typeof row[p] !== 'string') { row[p] = row[p].toString() }
+      let smplfd = row[p].includes(',') ? `"${row[p]}"` : row[p]
+      smplfd = smplfd.replace(/\n/g, '').replace(/\r/g, '')
+      return smplfd
     })
     return res.join(',')
   }
