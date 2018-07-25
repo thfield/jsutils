@@ -2,7 +2,7 @@
   "name": "jsutils",
   "version": "1.0.0",
   "description": "Useful little functions",
-  "main": "array-to-csv.js",
+  "main": "index.js",
   "scripts": {
     "test": "node tests.js"
   },
